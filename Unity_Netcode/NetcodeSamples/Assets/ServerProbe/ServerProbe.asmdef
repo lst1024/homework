@@ -1,0 +1,23 @@
+{
+    "name": "ServerProbe",
+    "rootNamespace": "ServerProbe",
+    "references": [
+        "Unity.Entities",
+        "Unity.Collections",
+        "Unity.Mathematics",
+        "Unity.Burst",
+        "Unity.NetCode",
+        "Unity.Networking.Transport",
+        "Unity.Scenes",
+        "HelloNetcodeSamples"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
