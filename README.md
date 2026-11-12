@@ -1,1 +1,38 @@
 # homework
+
+실행 기록 (run.txt)
+17:54:24.114 runId=20261111-conn-t48 scene=CharacterController port=7979 clientProcs=2 thinPerProc=24 profile= seconds=40 fps=60 expectedConnections=50
+17:54:24.293 server pid=45164 args=-batchmode -nographics -scene CharacterController -port 7979 ... -probeDuration 60
+17:54:30.397 client1 pid=32416 args=-batchmode -nographics ... -probeThin 24 -probeSeed 1 -probeFps 60 -probeDuration 40
+17:54:31.419 client2 pid=8344 args=-batchmode -nographics ... -probeThin 24 -probeSeed 2 -probeFps 60 -probeDuration 40
+17:55:27.816 server pid=45164 exit=0
+17:55:27.820 client1 pid=32416 exit=0
+17:55:27.822 client2 pid=8344 exit=0
+
+서버 (server.log)
+[ProbeDriver] clientServerTickRate.singletonExists=False SimulationTickRate=60 NetworkTickRate=60 MaxSimulationStepsPerFrame=1 MaxSimulationStepBatchSize=4 TargetFrameRateMode=Auto targetFrameRate=60
+[ServerProbe] connections=0 inGame=0 withCommandsArrived=0 withSnapshotAck=0 t=5.5s
+[ServerWorld] Go in game connection 1
+[ServerWorld] Go in game connection 2
+...
+[ProbeDriver] system dump world='ServerWorld' flags=GameServer rows=194 file='...\server\systems-ServerWorld.tsv'
+...
+[ServerProbe] connections=50 inGame=50 withCommandsArrived=50 withSnapshotAck=50 t=45.6s
+[ProbeDriver] duration 60s reached. Quitting.
+
+클라이언트 (client1.log)
+[ProbeDriver] client frame cap: targetFrameRate=60 vSyncCount=0
+[ClientWorld] Go in game connection 1
+[ProbeDriver] thin client creation started. requested=24 rateHz=4 sceneRequests=1 t=0.8s
+[ThinClientWorld1] Go in game connection 2
+[ThinProbe][ThinClientWorld1] input entity created for connection 2, seed 1001
+[ThinClientWorld2] Go in game connection 3
+...
+[ProbeDriver] thin client worlds=4/24 t=1.6s
+
+프로브 CSV (server\server-ticks.csv, server\server-conns.csv)
+frame,idx_in_frame,server_tick,batch_size,begin_us,dur_us,connections,in_game
+3,0,3,1,103230,112,0,0
+
+t_us,network_id,in_game,est_rtt_ms,dev_rtt_ms,last_snapshot_acked_by_remote,cmds_arrived,...
+7006142,1,1,15.0,2.2,415,176,44,0,-481,3,1,0,0
