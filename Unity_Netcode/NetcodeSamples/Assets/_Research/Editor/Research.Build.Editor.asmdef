@@ -1,0 +1,19 @@
+{
+    "name": "Research.Build.Editor",
+    "rootNamespace": "Research.Build",
+    "references": [
+        "Unity.Entities.Build",
+        "Unity.NetCode.Authoring.Hybrid"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
